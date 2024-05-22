@@ -1,0 +1,47 @@
+@extends('layouts.app')
+
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('css/item.css') }}">
+@endsection
+
+
+@section('content')
+    <div class="container">
+        <h1>商品情報登録</h1>
+        <form action="{{ route('items.store') }}" method="POST">
+            @csrf
+            <div class="form-group">
+                <label for="name">商品名<span class="required">*</span></label>
+                <input type="text" name="name" id="name" class="form-control" required>
+                <small></small>
+            </div>
+            <div class="form-group">
+                <label for="maker">メーカー名<span class="required">*</span></label>
+                <input type="text" name="maker" id="maker" class="form-control" required>
+                <small></small>
+            </div>
+            <div class="form-group">
+                <label for="price">価格<span class="required">*</span></label>
+                <input type="number" name="price" id="price" class="form-control" required>
+                <small></small>
+            </div>
+            <div class="form-group">
+                <label for="stock">在庫数<span class="required">*</span></label>
+                <input type="number" name="stock" id="stock" class="form-control" required>
+                <small></small>
+            </div>
+            <button type="submit" class="btn btn-primary">登録</button>
+
+ 　 <div class="form-group">
+    <label for="name">商品名<span class="required">*</span></label>
+    <input type="text" name="name" id="name" class="form-control" required>
+    <small></small>
+　　</div>
+        </form>
+    </div>
+@endsection
+
+
+@section('scripts')
+    <script src="{{ asset('js/item.js') }}"></script>
+@endsection

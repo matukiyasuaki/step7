@@ -1,0 +1,30 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Item;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller; 
+
+class ItemController extends Controller
+{
+    public function store(Request $request)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'maker' => 'required|max:255',
+            'price' => 'required|integer|min:0',
+            'stock' => 'required|integer|min:0',
+        ]);
+
+        Item::create($validatedData);
+
+        return redirect()->route('items.create')->with('success', '商品情報が登録されました。');
+    }
+
+public function create()
+{
+    return view('item.create');
+}
+
+}

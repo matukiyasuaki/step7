@@ -1,0 +1,26 @@
+/* user-registration.css */
+
+.card {
+    margin-top: 50px;
+}
+
+.card-header {
+    background-color: #f8fafc;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.invalid-feedback {
+    display: block;
+    color: #dc3545;
+    font-size: 80%;
+}
